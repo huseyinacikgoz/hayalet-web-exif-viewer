@@ -1,6 +1,9 @@
 // UI for the viewer. Everything read from a file is untrusted: it is only ever set as textContent, never as HTML.
-import { readMeta } from './exif.js';
-import { ICONS } from './icons.js';
+// Classic script (loaded after icons.js and exif.js) so the page also works when opened straight from disk.
+(function () {
+'use strict';
+const { readMeta } = globalThis.HayaletExif;
+const ICONS = globalThis.HAYALET_ICONS;
 
 const STRINGS = {
     tr: {
@@ -246,3 +249,4 @@ document.getElementById('lang').addEventListener('click', () => {
         localStorage.setItem('hayalet_lang', lang);
     } catch {}
 });
+})();

@@ -1,7 +1,9 @@
 // Run: node test/exif.test.mjs
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { readMeta, toDecimal, xmpCoord } from '../exif.js';
+import '../exif.js';
+
+const { readMeta, toDecimal, xmpCoord } = globalThis.HayaletExif;
 
 const load = (name) => {
     const b = readFileSync(new URL(`./fixtures/${name}`, import.meta.url));

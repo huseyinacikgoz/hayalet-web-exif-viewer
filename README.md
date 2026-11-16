@@ -28,12 +28,7 @@ Desteklenen biçimler: **JPEG, PNG, WebP**. HEIC/AVIF tanınır ama henüz okunm
 
 Barındırılan sürüm: https://huseyinacikgoz.com.tr/hayalet/exif/
 
-Yerelde çalıştırmak için (ES modülleri `file://` üzerinden yüklenmez):
-
-```bash
-python3 -m http.server 8000
-# http://localhost:8000
-```
+Yerelde: depoyu indir, **`index.html` dosyasına çift tıkla**. Kurulum, sunucu ya da internet gerekmez; istersen interneti kapatıp dene.
 
 ## Test
 
