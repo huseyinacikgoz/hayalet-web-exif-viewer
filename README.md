@@ -3,7 +3,7 @@
 **Fotoğrafının içinde ne var? Tarayıcında gör, hiçbir yere yükleme.**
 *What's inside your photo? See it in your browser, upload it nowhere.*
 
-Bir fotoğrafın içine gizlenmiş konumu (GPS), telefon modelini, seri numarasını ve çekim saatini gösteren küçük, açık kaynak bir web aracı. [Hayalet](https://huseyinacikgoz.com.tr/hayalet/) uygulamasının bir parçası.
+Bir fotoğrafın içine gizlenmiş konumu (GPS), telefon modelini, seri numarasını ve çekim saatini gösteren küçük, açık kaynak bir web aracı. [Hayalet](https://hayalet.app/) uygulamasının bir parçası.
 
 ## Neden güvenebilirsin? / Why you can trust it
 
@@ -26,7 +26,7 @@ Desteklenen biçimler: **JPEG, PNG, WebP**. HEIC/AVIF tanınır ama henüz okunm
 
 ## Kullanım / Usage
 
-Barındırılan sürüm: https://huseyinacikgoz.com.tr/hayalet/exif/
+Barındırılan sürüm: https://hayalet.app/exif/
 
 Yerelde: depoyu indir, **`index.html` dosyasına çift tıkla**. Kurulum, sunucu ya da internet gerekmez; istersen interneti kapatıp dene.
 
