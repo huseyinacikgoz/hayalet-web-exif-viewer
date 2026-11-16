@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- The promise, enforced by the browser: this page can load nothing from anywhere and send nothing anywhere. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Hayalet EXIF: Fotoğrafının içinde ne var?</title>
+    <meta name="description" content="Fotoğrafındaki gizli bilgileri (konum, cihaz, tarih) tarayıcında gör. Dosya hiçbir yere yüklenmez. Açık kaynak.">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="nav">
+        <div class="wrap nav-in">
+            <a class="brand" href="./"><img src="logo.png" width="32" height="32" alt=""><span>Hayalet <small>EXIF</small></span></a>
+            <button class="lang" id="lang" type="button">EN</button>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="hero">
+            <h1 data-t="title"></h1>
+            <p class="lead" data-t="lead"></p>
+            <p class="lock"><span class="i" data-icon="lock-closed"></span><span data-t="lock"></span></p>
+        </section>
+
+        <label class="drop" id="drop" for="file">
+            <input type="file" id="file" accept="image/*,.heic,.heif">
+            <span class="i big" data-icon="images"></span>
+            <b data-t="pick"></b>
+            <span data-t="pickSub"></span>
+        </label>
+
+        <section id="result" class="result" hidden></section>
+    </main>
+
+    <footer class="wrap">
+        <p class="gh"><span class="i" data-icon="logo-github"></span><span data-t="open"></span> <a href="https://github.com/huseyinacikgoz/hayalet-web-exif-viewer" rel="noopener" data-t="source"></a></p>
+        <p><span data-t="clean"></span> <a href="https://huseyinacikgoz.com.tr/hayalet/" rel="noopener">Hayalet</a></p>
+    </footer>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

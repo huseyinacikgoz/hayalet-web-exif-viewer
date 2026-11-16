@@ -1,0 +1,9 @@
+{
+  "name": "hayalet-web-exif-viewer",
+  "version": "1.0.0",
+  "description": "See the hidden metadata in your photos, right in the browser. Nothing is uploaded.",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "scripts": { "test": "node test/exif.test.mjs" }
+}

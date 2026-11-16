@@ -1,0 +1,413 @@
+/* Same look as the Hayalet app: OLED black, iOS dark grays, system font (no third-party requests). */
+:root {
+    --bg: #000;
+    --card: #1c1c1e;
+    --card-2: #2c2c2e;
+    --sep: rgba(84, 84, 88, 0.55);
+    --label: #fff;
+    --label-2: #8e8e93;
+    --green: #30d158;
+    --red: #ff453a;
+    --orange: #ff9f0a;
+    --blue: #0a84ff;
+    --purple: #bf5af2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--label);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    color: var(--label);
+}
+
+.wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.i {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    flex: none;
+    display: inline-block;
+    vertical-align: -0.15em;
+}
+
+.i.big {
+    width: 40px;
+    height: 40px;
+}
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid var(--sep);
+}
+
+.nav-in {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.brand img {
+    border-radius: 9px;
+}
+
+.brand small {
+    color: var(--label-2);
+    font-weight: 700;
+}
+
+.lang {
+    background: var(--card);
+    color: var(--label);
+    border: 0;
+    border-radius: 999px;
+    padding: 7px 14px;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hero {
+    text-align: center;
+    padding: 48px 0 28px;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0 0 14px;
+}
+
+.lead {
+    color: var(--label-2);
+    font-size: 1.1rem;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.lock {
+    display: inline-flex;
+    gap: 8px;
+    align-items: flex-start;
+    text-align: left;
+    color: var(--green);
+    font-size: 0.9rem;
+    font-weight: 600;
+    max-width: 560px;
+    margin: 18px auto 0;
+}
+
+.lock .i {
+    margin-top: 3px;
+}
+
+.drop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+    border: 2px dashed var(--card-2);
+    border-radius: 28px;
+    padding: 40px 16px;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.drop:hover,
+.drop.over {
+    border-color: var(--label-2);
+    background: #0d0d0e;
+}
+
+.drop input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.drop:focus-within {
+    outline: 2px solid var(--blue);
+    outline-offset: 4px;
+}
+
+.drop .i.big {
+    color: var(--label-2);
+    margin-bottom: 6px;
+}
+
+.drop b {
+    font-size: 1.15rem;
+}
+
+.drop span {
+    color: var(--label-2);
+    font-size: 0.95rem;
+}
+
+.result {
+    padding: 28px 0 8px;
+    scroll-margin-top: 70px;
+}
+
+.file {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.file img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 14px;
+    background: var(--card);
+}
+
+.file b {
+    display: block;
+    word-break: break-all;
+}
+
+.file span {
+    color: var(--label-2);
+    font-size: 0.9rem;
+}
+
+.verdict {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    border-radius: 20px;
+    padding: 18px;
+    margin-bottom: 12px;
+}
+
+.verdict b {
+    display: block;
+    font-size: 1.15rem;
+}
+
+.verdict span {
+    opacity: 0.9;
+}
+
+.verdict.risky {
+    background: var(--red);
+}
+
+.verdict.some {
+    background: var(--orange);
+}
+
+.verdict.none {
+    background: var(--card);
+    color: var(--green);
+}
+
+.verdict.none span {
+    color: var(--label-2);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 16px;
+}
+
+.card-h {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+}
+
+.badge .i {
+    width: 18px;
+    height: 18px;
+}
+
+.badge.red {
+    background: var(--red);
+}
+
+.badge.blue {
+    background: var(--blue);
+}
+
+.badge.orange {
+    background: var(--orange);
+}
+
+.badge.purple {
+    background: var(--purple);
+}
+
+.badge.gray {
+    background: var(--card-2);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+    border-top: 0.5px solid var(--sep);
+    font-size: 0.95rem;
+}
+
+.row .k {
+    color: var(--label-2);
+}
+
+.row .v {
+    text-align: right;
+    word-break: break-word;
+}
+
+.card ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+    font-size: 0.92rem;
+}
+
+.small,
+.note {
+    color: var(--label-2);
+    font-size: 0.85rem;
+    margin: 8px 0 0;
+}
+
+.note {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 14px 16px;
+    margin-top: 12px;
+}
+
+details.all {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 4px 16px;
+    margin-top: 12px;
+}
+
+details.all summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 12px 0;
+}
+
+.scroll {
+    overflow-x: auto;
+    padding-bottom: 12px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.85rem;
+}
+
+td {
+    padding: 6px 8px;
+    border-top: 0.5px solid var(--sep);
+    vertical-align: top;
+}
+
+td:first-child,
+td:nth-child(2) {
+    color: var(--label-2);
+    white-space: nowrap;
+}
+
+td:last-child {
+    word-break: break-word;
+}
+
+.again {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    background: var(--label);
+    color: var(--bg);
+    border: 0;
+    border-radius: 999px;
+    padding: 14px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+footer {
+    color: var(--label-2);
+    font-size: 0.85rem;
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 48px;
+}
+
+footer p {
+    margin: 6px 0;
+}
+
+.gh .i {
+    margin-right: 6px;
+}
+
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
